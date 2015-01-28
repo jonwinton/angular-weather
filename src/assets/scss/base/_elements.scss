@@ -1,0 +1,45 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: #ffffff;
+    color: #444444;
+    font-family: $FONT_PRIMARY;
+    font-size: $FONT_SIZE;
+    line-height: 1.45;
+}
+
+b, strong {
+    font-weight: 800;
+}
+
+p + p {
+    margin-top: 20px;
+}
+
+a {
+    color: #666666;
+    text-decoration: underline;
+    transition: all 300ms;
+}
+
+a:active,
+a:focus,
+a:hover {
+    color: #287dbe;
+}
+
+a:focus {
+    text-decoration: underline;
+}
+
+pre {
+    display: block;
+    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    font-size: 14px;
+    padding: 10px;
+    background-color: #eeeeee;
+    overflow: scroll;
+}

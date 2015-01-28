@@ -1,0 +1,8 @@
+//----------------------------------------------------------------------
+// For vendor prefixes that aren't supported by Autoprefixer Grunt task
+//----------------------------------------------------------------------
+@mixin appearance($value: none) {
+    -webkit-appearance: $value; /* for Chrome and Safari */
+    -moz-appearance: $value; /* For Firefox */
+    appearance: $value;
+}

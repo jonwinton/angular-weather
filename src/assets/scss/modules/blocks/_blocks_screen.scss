@@ -1,0 +1,37 @@
+/* ---------------------------------------------------------------------
+blocks
+------------------------------------------------------------------------ */
+$blocks-SPACING: 20px;
+
+.blocks {
+    font-size: 0; /* To remove horizontal space between inline-block elements. */
+    margin-left: -20px;
+}
+
+.blocks > * {
+    display: inline-block;
+    font-size: $FONT_SIZE;  /* Resetting font size */
+    vertical-align: top;
+    width: 100%;
+    margin: 0;
+    list-style-type: none;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.blocks_2up > * {
+    width: 50%;
+}
+
+.blocks_3up > * {
+    width: 33.3%;
+}
+
+.blocks_4up > * {
+    width: 25%;
+}
+
+.blocks_6up > * {
+    width: 16.6666%;
+}

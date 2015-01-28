@@ -1,0 +1,20 @@
+include "templates/header.html"
+
+<div class="main">
+
+    <h2 ng-cloak>{{'ANGULAR'}}</h2>
+
+    <div  ng-controller="FirstController">
+
+        <p ng-cloak>{{message}}</p>
+
+        <button class="btn btn-default" ng-click="toggle=!toggle">Toggle</button>
+
+        <p  ng-cloak ng-hide="toggle">I did my first toggle thing</p>
+
+    </div>
+
+
+</div>
+
+include "templates/footer.html"

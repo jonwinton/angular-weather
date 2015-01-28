@@ -1,0 +1,15 @@
+[ng\:cloak],
+[data-ng-cloak],
+[ng-cloak],
+.ng-cloak,
+.ng-hide {
+  @include isHidden();
+}
+
+.ng-hide {
+  @include isTemporarilyHidden();
+}
+
+.ng-show {
+  @include isNotTemporarilyHidden();
+}

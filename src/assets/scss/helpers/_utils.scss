@@ -1,0 +1,58 @@
+@mixin isHidden() {
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    position: absolute !important;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+@mixin isTemporarilyHidden() {
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+@mixin isNotTemporarilyHidden() {
+    position: relative !important;
+    left: 0 !important;
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin image-replacement() {
+    overflow: hidden;
+    &:before {
+        content: " ";
+        display: block;
+        width: 0;
+        height: 85%;
+    }
+}
+
+.isHidden {
+    @include isHidden();
+}
+
+.isAlwaysHidden {
+    display: none;
+}
+
+.js .isHiddenJS {
+    @include isHidden();
+}
+
+.no-js .isHiddenNoJS {
+    @include isHidden();
+}
