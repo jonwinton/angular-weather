@@ -8,7 +8,9 @@
     "jquery": "components/jquery#1.11.0",
     "nerdery-function-bind": "./tools/cache/nerdery-function-bind",
     "angular": "1.4.0-build.3807+sha.b3a9bd3",
-    "bootstrap-css-only": ""
+    "bootstrap-css-only": "",
+    "angular-ui-router": "~0.2.13",
+    "requirejs-text": "~2.0.13"
   },
   "devDependencies": {}
 }

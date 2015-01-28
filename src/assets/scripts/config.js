@@ -35,9 +35,10 @@
 require.config({
     paths: {
         requirejs: '../vendor/requirejs/require',
+        text: '../vendor/requirejs-text/text',
         jquery: '../vendor/jquery/jquery',
         angular: '../vendor/angular/angular',
-        'nerdery-function-bind': '../vendor/nerdery-function-bind/index'
+        'ui-router': '../vendor/angular-ui-router/release/angular-ui-router'
     },
     shim: {
         jquery: {
@@ -49,7 +50,11 @@ require.config({
             ],
             exports: 'angular'
         },
-
+        'ui-router': {
+            deps: [
+                'angular'
+            ]
+        }
     },
     waitSeconds: 120
 });

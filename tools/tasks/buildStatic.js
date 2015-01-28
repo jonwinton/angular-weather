@@ -13,7 +13,8 @@ module.exports = function(grunt) {
                         '**/*.{asp,aspx,cshtml,jsp,php,py,rb,txt}',
                         'assets/media/**',
                         'assets/lib/**',
-                        '!assets/vendor/**'
+                        '!assets/vendor/**',
+                        'templates/**'
                     ],
                     dest: '<%= env.DIR_DEST %>'
                 }]

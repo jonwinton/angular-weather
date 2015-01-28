@@ -15,6 +15,6 @@ require(
         'use strict';
 
         // Initialize
-        window.app = new App(true);
+        window.app = new App();
     }
 );
