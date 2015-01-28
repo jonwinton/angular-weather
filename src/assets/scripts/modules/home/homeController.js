@@ -3,6 +3,7 @@ define(function(require, exports, module) { // jshint ignore:line
 
     var angular = require('angular');
 
+
     /**
      * @ngdoc controller
      * @name clearpath.modules.authentication.controller:HomeController
@@ -41,18 +42,11 @@ define(function(require, exports, module) { // jshint ignore:line
     proto.init = function() {
         console.log(this);
 
-        var success = function(response) {
-            console.log(response);
-        };
-
-        var fail = function(error) {
-            console.log(error);
-        };
 
         this._weatherFactory.getWeather()
-                            .then(function(response){
-                                console.log(response);
-                            });
+            .then(function(modeledData){
+                console.log(modeledData);
+            });
 
 
         return this;
