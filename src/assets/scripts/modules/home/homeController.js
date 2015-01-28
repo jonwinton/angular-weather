@@ -11,7 +11,11 @@ define(function(require, exports, module) { // jshint ignore:line
      * Handles scope/service interaction on user profile
      *
      */
-    var HomeController = function() {
+    var HomeController = function(
+        WeatherFactory
+    ) {
+        this._weatherFactory = WeatherFactory;
+
         this.init();
     };
 
@@ -21,7 +25,9 @@ define(function(require, exports, module) { // jshint ignore:line
      * @property $inject
      * @type {string[]}
      */
-    HomeController.$inject = [];
+    HomeController.$inject = [
+        'WeatherFactory'
+    ];
 
     var proto = HomeController.prototype;
 
@@ -33,9 +39,27 @@ define(function(require, exports, module) { // jshint ignore:line
      * @chainable
      */
     proto.init = function() {
-        console.log('home controller!');
+        console.log(this);
+
+        var success = function(response) {
+            console.log(response);
+        };
+
+        var fail = function(error) {
+            console.log(error);
+        };
+
+        this._weatherFactory.getWeather()
+                            .then(function(response){
+                                console.log(response);
+                            });
+
+
         return this;
     };
+
+
+
 
 
     return HomeController;

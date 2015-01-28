@@ -63,10 +63,7 @@ define(function(require, exports, module) { // jshint ignore:line
                     }
                 }
 
-
-
         }]);
-
 
         // Bootstrap app to the document
         angular.element(document).ready(function() {
