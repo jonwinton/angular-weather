@@ -14,6 +14,7 @@ define(function(require, exports, module) { // jshint ignore:line
     var mod = angular.module('weather.modules.global', []);
 
     mod.factory('WeatherFactory', require('./weatherFactory'));
+    mod.factory('AutocompleteFactory', require('./autocompleteFactory'));
 
     return mod.name;
 

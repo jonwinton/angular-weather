@@ -14,7 +14,7 @@ define(function(require, exports, module) { // jshint ignore:line
     var mod = angular.module('weather.modules.home', []);
 
     mod.controller('HomeController', require('./homeController'));
+    mod.directive('weatherSearch', require('./weatherSearchDirective'));
 
     return mod.name;
-
 });

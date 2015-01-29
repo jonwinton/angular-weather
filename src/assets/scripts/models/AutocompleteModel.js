@@ -1,7 +1,7 @@
 /*jshint camelcase:false */ // remove camelcase because of api responses
 /**
  * @fileOverview
- * WeatherModel Declaration File
+ * Autocomplete Declaration File
  *
  * @version 1.0
  */
@@ -12,17 +12,17 @@ define(function(require, exports, module) { // jshint ignore:line
     var BaseModel = require('./BaseModel');
 
     /**
-     * WeatherModel definition
+     * Autocomplete definition
      *
-     * @class WeatherModel
+     * @class Autocomplete
      * @constructor
      */
-    var WeatherModel = function(initialModel) {
+    var Autocomplete = function(initialModel) {
         BaseModel.call(this, initialModel);
     };
 
-    WeatherModel.prototype = Object.create(BaseModel.prototype);
-    WeatherModel.prototype.constructor = WeatherModel;
+    Autocomplete.prototype = Object.create(BaseModel.prototype);
+    Autocomplete.prototype.constructor = Autocomplete;
 
     /**
      * Output serializable version of model data
@@ -30,7 +30,7 @@ define(function(require, exports, module) { // jshint ignore:line
      * @method toJSON
      * @returns {Object}
      */
-    WeatherModel.prototype.toJSON = function() {
+    Autocomplete.prototype.toJSON = function() {
         return {};
     };
 
@@ -40,11 +40,16 @@ define(function(require, exports, module) { // jshint ignore:line
      * @method fromJSON
      * @param {Object} modelData Data to read from
      */
-    WeatherModel.prototype.fromJSON = function(modelData) {
-
+    Autocomplete.prototype.fromJSON = function(modelData) {
+        this.cities = modelData.map(function(item){
+            return {
+                name: item.name,
+                url: item.l
+            };
+        });
         this.data = modelData;
     };
 
 
-    return WeatherModel;
+    return Autocomplete;
 });

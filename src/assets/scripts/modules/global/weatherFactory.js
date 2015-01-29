@@ -10,9 +10,8 @@ define(function(require, exports, module) { // jshint ignore:line
     var WeatherModel = require('models/WeatherModel');
 
     return ['$http', function($http){
-        var WeatherFactory = function() {
-            this.test = 'totes testing';
-        };
+
+        var WeatherFactory = function() {};
 
         var proto = WeatherFactory.prototype;
 

@@ -13,11 +13,13 @@ define(function(require, exports, module) { // jshint ignore:line
      *
      */
     var HomeController = function(
-        WeatherFactory
+        $scope,
+        WeatherFactory,
+        AutocompleteFactory
     ) {
+        this._scope = $scope;
         this._weatherFactory = WeatherFactory;
-
-        this.init();
+        this._autocompleteFactory = AutocompleteFactory;
     };
 
     /**
@@ -27,31 +29,38 @@ define(function(require, exports, module) { // jshint ignore:line
      * @type {string[]}
      */
     HomeController.$inject = [
-        'WeatherFactory'
+        '$scope',
+        'WeatherFactory',
+        'AutocompleteFactory'
     ];
 
+    // Alias prototype
     var proto = HomeController.prototype;
 
-    /**
-     * Initialize any behavior on creation
-     *
-     * @method init
-     * @private
-     * @chainable
-     */
-    proto.init = function() {
-        console.log(this);
-
-
+    proto.retrieveWeather = function() {
         this._weatherFactory.getWeather()
             .then(function(modeledData){
                 console.log(modeledData);
             });
-
-
-        return this;
     };
 
+    proto.fireAutocomplete = function(query) {
+        var self = this;
+        var success = function(response) {
+            self._scope.cities = response.cities;
+        };
+
+        var error = function(error) {
+            console.log(error);
+        };
+
+        this._autocompleteFactory.queryAutocomplete(query)
+            .then(success, error);
+    };
+
+    proto.test = function() {
+        console.log('called from directive');
+    };
 
 
 
